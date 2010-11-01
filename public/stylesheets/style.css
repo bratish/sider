@@ -1,0 +1,119 @@
+/* Layout Stylesheet */
+
+
+body{
+ margin: 0px;
+ padding:0;
+ background: #808080;
+ color: #333333;
+ }
+
+ img {
+   border: 0px;
+   display: none;
+}
+
+#eye {
+  margin: 2px;
+  padding: 2px;
+}
+
+#lh-col{
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ width: 180px;
+ border: 2px solid #000000;
+ background: #c0c0c0;
+ color: #333333;
+ margin: 0px;
+ padding: 0px;
+ height: 400px;
+ }
+
+#rh-col{
+ margin: 20px 20px 20px 220px;
+ border: 2px solid #000000;
+ background: #ffffff;
+ color: #333333;
+ padding: 20px;
+ display: inline-block;
+ width: 1000px;
+ }
+
+/* Presentation Stylesheet */
+h4 {
+ margin:0;
+ padding: 5px 0;
+ }
+
+.oneKey {
+  padding: 5px;
+  font-size: 10pt;
+  margin: 4px;
+  position: relative;
+  border: #fff 1px solid;
+  width: 98%;
+}
+
+#keyToolBox {
+  height: 40px;
+  width: 30px;
+  display: none;
+}
+
+.keyName {
+  height: 40px;
+  display: inline;
+}
+
+.onMouseOverKey {
+  background-color: #B5EDBC;
+  border: #298885 1px solid;
+}
+
+.onMouseOverKey img {
+  display: block;
+  float: left;
+}
+
+#keyInput {
+  height: 30px;
+  width: 95%;
+  border: #298885 1px solid;
+  font-size: 25px;
+  color: #534545;
+}
+
+#keyListHolder {
+  height: 80%;
+  width: 95%;
+  overflow: auto;
+  background-color: #fff;
+  border: #298885 1px solid;
+  padding: 5px;
+}
+
+.keyValue {
+  background-color: #e6f69f;
+  border: 1px solid #5b7a11;
+  text-align: left;
+  margin: 2px;
+  padding: 5px;
+  width: 80%;
+}
+
+#guiHolder{
+  border: 1px solid #5b7a11;
+  display: table-cell;
+  height: 600px;
+  width: 100%;
+  float: left;
+  padding: 5px;
+}
+
+.actions {
+  float: right;
+/*  border: 1px solid #5b7a11;*/
+  padding: 2px;
+}
