@@ -9,7 +9,7 @@ end
 
 get '/get-keys/:sstr' do
   keys = redis.keys("*#{params['sstr']}*")
-
+  content_type :json
   {'searchStr' => params['sstr'], 'keys' => keys}.to_json
 end
 
@@ -30,6 +30,6 @@ get '/get-key-value/:key' do
   else
     nil
   end
-  
+  content_type :json
   {'result' => result, 'keyType' => type}.to_json
 end
