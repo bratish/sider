@@ -33,3 +33,19 @@ get '/get-key-value/:key' do
   content_type :json
   {'result' => result, 'keyType' => type}.to_json
 end
+
+get '/get-key-type/:key' do
+  content_type :json
+  {'keyType' => redis.type(params['key'])}.to_json
+end
+
+get '/delete/:key' do
+  content_type :json
+  {'deleted' => redis.del(params['key'])}.to_json
+end
+
+get '/rename/:oldKeyName/:newKeyName' do
+  redis.rename(params['oldKeyName'], params['newKeyName'])
+  content_type :json
+  {'renamedKey' => params['newKeyName']}.to_json
+end
