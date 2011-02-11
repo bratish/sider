@@ -35,9 +35,9 @@ Nimda.prototype.getTheKeys = function(obj){
         if(response.keys && response.keys.length > 0)
           for(var i=0; i < response.keys.length; i++ ){
             divId = "keyHolder" + i.toString();
-            htmlStr += "<div class='oneKey onMouseOverKey' id='" + divId + "'" +
-//              "onmouseover=\"$(this).addClass('onMouseOverKey')\" " +
-//              "onmouseout=\"$(this).removeClass('onMouseOverKey')\">"+
+            htmlStr += "<div class='oneKey' id='" + divId + "'" +
+              "onmouseover=\"$(this).addClass('onMouseOverKey')\" " +
+              "onmouseout=\"$(this).removeClass('onMouseOverKey')\">"+
               "<div class='cell-header'>" +
               "<div class='arrow-holder'><img src='images/arrow_collapsed.png' id='arrow' onclick=\"nimda.getKeyValue('"+ response.keys[i] +"', '" + divId + "');\" /></div>" +
               "<div class='keyName'>" +
