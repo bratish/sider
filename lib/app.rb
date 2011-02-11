@@ -49,3 +49,14 @@ get '/rename/:oldKeyName/:newKeyName' do
   content_type :json
   {'renamedKey' => params['newKeyName']}.to_json
 end
+
+post '/run-command' do
+  p "*******"
+  p params['cmd']
+  p "*******"
+  content_type :json
+  {
+    'command' => params['cmd'],
+    'output' => Cmd.new(params['cmd']).execute
+  }.to_json
+end
