@@ -7,6 +7,10 @@ get "/" do
   erb :index
 end
 
+get "/install-redis" do
+  require 'git'
+end
+
 get '/get-keys/:sstr' do
   keys = redis.keys("*#{params['sstr']}*")
   content_type :json
@@ -51,9 +55,6 @@ get '/rename/:oldKeyName/:newKeyName' do
 end
 
 post '/run-command' do
-  p "*******"
-  p params['cmd']
-  p "*******"
   content_type :json
   {
     'command' => params['cmd'],
