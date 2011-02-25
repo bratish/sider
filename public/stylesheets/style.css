@@ -133,22 +133,17 @@ h4 {
 
 #guiHolder{
   border: 1px solid #5b7a11;
-  display: table-cell;
   height: 600px;
-  width: 50%;
-  float: left;
-  padding: 5px;
-  margin: 5px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 #commandLineHolder {
   border: 1px solid #5b7a11;
-  display: table-cell;
   height: 600px;
-  width: 45%;
+  width: 100%;
   float: left;
-  margin: 5px;
-  padding: 5px;
+  margin: 0 auto;
   font-family: 'Courier New',Courier,monospace;
   font-size: 12px;
   overflow: auto;

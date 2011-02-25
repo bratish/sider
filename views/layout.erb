@@ -9,7 +9,12 @@
 <body>
   <div id="rh-col">
     <div id="header"></div>
-    <div id="topnav"></div>
+    <div id="topnav">
+      <% if request.cookies["loggedin"] == "true" %>
+      <a href="#" onclick="nimda.selectView('gui'); return false;">GUI</a> |
+      <a href="#" onclick="nimda.selectView('cmd'); return false;">Command Line</a>
+      <% end %>
+    </div>
     <div id="contentbody">
       <%= yield %>
     </div>

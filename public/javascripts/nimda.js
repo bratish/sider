@@ -6,6 +6,7 @@ var Nimda = function(){
   this.COMMAND_LIST_POINTER = 0,
   this.PROMPT = 'redis&gt;&nbsp;';
   this.EDIT_KEY = '';
+  this.SELECTED_VIEW = 'gui';
 };
 
 
@@ -274,6 +275,21 @@ Nimda.prototype.doWithCommand = function(cmd){
   });
 }
 
+Nimda.prototype.selectView = function(whichView){
+  switch(whichView){
+    case "gui":
+      nimda.SELECTED_VIEW = "gui";
+      $("#commandLineHolder").css('display', 'none');
+      $("#guiHolder").css('display', 'block');
+      break;
+    case "cmd":
+      nimda.SELECTED_VIEW = "cmd";
+      $("#guiHolder").css('display', 'none');
+      $("#commandLineHolder").css('display', 'block');
+      break;
+
+  }
+}
 
 
 $(document).ready(function(){

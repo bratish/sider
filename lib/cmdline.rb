@@ -27,7 +27,7 @@ class Cmd
   def execute
     tokens = @cmd.split(" ")
     if COMMANDS.include? tokens.first
-      eval("Redis.new.send('#{tokens.first}', '#{tokens[1..tokens.size].join("', '")}')")
+      eval("redis.send('#{tokens.first}', '#{tokens[1..tokens.size].join("', '")}')")
     else
       "undefined command"
     end
