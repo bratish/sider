@@ -281,11 +281,13 @@ Nimda.prototype.selectView = function(whichView){
       nimda.SELECTED_VIEW = "gui";
       $("#commandLineHolder").css('display', 'none');
       $("#guiHolder").css('display', 'block');
+      $("#keyInput").focus();
       break;
     case "cmd":
       nimda.SELECTED_VIEW = "cmd";
       $("#guiHolder").css('display', 'none');
       $("#commandLineHolder").css('display', 'block');
+      $("#command").focus();
       break;
 
   }
@@ -294,10 +296,14 @@ Nimda.prototype.selectView = function(whichView){
 
 $(document).ready(function(){
   nimda.inputBox();
-      $("#commandLineHolder").click(function(){$("#command").focus();});
-  //    $("#commandLineHolder").focus(function(){$("#command").focus();});
-    $("#keyInput").focus();
-  });
+//  if(nimda.SELECTED_VIEW == 'gui'){
+//    $("#commandLineHolder").click(function(){$("#command").focus();});
+//  } else if(nimda.SELECTED_VIEW == 'cmd'){
+//    $("#commandLineHolder").focus(function(){$("#command").focus();});
+//    $("#keyInput").focus();
+//  }
+//    $("#keyInput").focus();
+});
   
 var nimda = new Nimda();
 

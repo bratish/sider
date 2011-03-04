@@ -136,6 +136,7 @@ h4 {
   height: 600px;
   width: 100%;
   margin: 0 auto;
+  display: none;
 }
 
 #commandLineHolder {
@@ -147,6 +148,7 @@ h4 {
   font-family: 'Courier New',Courier,monospace;
   font-size: 12px;
   overflow: auto;
+  display: none;
  }
 
 .arrow-holder {
