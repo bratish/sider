@@ -45,7 +45,7 @@ Nimda.prototype.getTheKeys = function(obj){
               response.keys[i].substring(0, response.keys[i].indexOf(response.searchStr)) +
               '<b>' + response.searchStr + '</b>' +
               response.keys[i].substring(response.keys[i].indexOf(response.searchStr) +
-              response.searchStr.length) + 
+              response.searchStr.length) +
               "</div>" +
               "<div class='actions'>" +
               "<img src='images/database_edit.png' onclick=\"nimda.editKey('"+ response.keys[i] +"', '" + divId + "');\" title=\"Edit this key\"/>" +
@@ -184,7 +184,7 @@ Nimda.prototype.getKeyValue = function(key, divId){
         $(obj).html(innerHtml);
         $("#" + divId + " #arrow").attr('src', "images/arrow_expanded.png");
       }
-    
+
     });
   } else {
     $(obj).html(nimda.LAST_ACTIVE_ITEM_HTML);
@@ -200,14 +200,16 @@ Nimda.prototype.checkEnter = function(event){
         command = $("#command").val();
 
     if(keycode == '13'){
-      $("#commandHolder").append("<br />");
+//      console.log(command.length);
       if(command.length != 0){
-        nimda.doWithCommand(command);
+        $("#commandHolder").append("<br />");
+        nimda.executeCommand(command);
 //        nimda.inputBox(command);
       } else {
         $("#oneCommandHolder").remove();
+        $("#commandHolder").append("<br />");
         $("#commandHolder").append(nimda.PROMPT);
-        $("#commandHolder").append("<div id='oneCommandHolder'>" + 
+        $("#commandHolder").append("<div id='oneCommandHolder'>" +
                                     nimda.PROMPT +
                                     "<input id='command' type='text' style='border: 0px;' onkeypress='nimda.checkEnter(event)'/></div>");
         $("#command").focus();
@@ -243,16 +245,16 @@ Nimda.prototype.inputBox = function(command){
       //}
       $("#commandHolder").append(nimda.PROMPT + command);
     }
-    $("#commandHolder").append("<div id='oneCommandHolder'>" + 
+    $("#commandHolder").append("<div id='oneCommandHolder'>" +
                                 nimda.PROMPT +
                                 "<input id='command' type='text' onkeypress='nimda.checkEnter(event)'/></div>");
     $("#command").focus();
   }
 
-Nimda.prototype.doWithCommand = function(cmd){
+Nimda.prototype.executeCommand = function(cmd){
     nimda.COMMAND_LIST.push(cmd);
     nimda.COMMAND_LIST_POINTER = nimda.COMMAND_LIST.length;
-    console.log(cmd);
+//    console.log(cmd);
     $.ajax({
       url: '/run-command',
       type: 'POST',
@@ -260,9 +262,10 @@ Nimda.prototype.doWithCommand = function(cmd){
       datatype: "json",
       success: function(response){
         $("#oneCommandHolder").remove();
+//        console.log(response.output);
         $("#commandHolder").append( nimda.PROMPT +
                                     response.command +
-                                    "<br /><div class='command-output'>" +
+                                    "<div class='command-output'>" +
                                     response.output +
                                     "</div>"
                                    );
@@ -304,6 +307,6 @@ $(document).ready(function(){
 //  }
 //    $("#keyInput").focus();
 });
-  
+
 var nimda = new Nimda();
 

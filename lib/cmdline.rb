@@ -27,7 +27,7 @@ class Cmd
   def execute
     tokens = @cmd.split(" ")
     if COMMANDS.include? tokens.first
-      eval("redis.send('#{tokens.first}', '#{tokens[1..tokens.size].join("', '")}')")
+        eval("redis.send('#{tokens.first}', '#{tokens[1..tokens.size].join("', '")}')") rescue 'Exception occurred'
     else
       "undefined command"
     end
