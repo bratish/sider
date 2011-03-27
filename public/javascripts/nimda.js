@@ -202,16 +202,16 @@ Nimda.prototype.checkEnter = function(event){
     if(keycode == '13'){
 //      console.log(command.length);
       if(command.length != 0){
-        $("#commandHolder").append("<br />");
+//        $("#commandHolder").append("<br />");
         nimda.executeCommand(command);
 //        nimda.inputBox(command);
       } else {
         $("#oneCommandHolder").remove();
-        $("#commandHolder").append("<br />");
+//        $("#commandHolder").append("<br />");
         $("#commandHolder").append(nimda.PROMPT);
         $("#commandHolder").append("<div id='oneCommandHolder'>" +
                                     nimda.PROMPT +
-                                    "<input id='command' type='text' style='border: 0px;' onkeypress='nimda.checkEnter(event)'/></div>");
+                                   "<input id='command' type='text' style='border: 0px;' onkeypress='nimda.checkEnter(event)'/></div>");
         $("#command").focus();
       }
       return false;
