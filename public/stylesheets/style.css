@@ -1,12 +1,64 @@
 /* Layout Stylesheet */
 
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, table, th, td {
+    margin: 0;
+    padding: 0;
+}
 
 body{
- margin: 0px;
- padding:0;
  background: #808080;
- color: #333333;
+ color: #BBBBBB;
+ font: 80%/175% Verdana,Arial,Helvetica,Tahoma,sans-serif;
+ font-size: 1.6em;
+ line-height: 1.7;
  }
+
+
+form, input, textarea {
+    margin: 0.2em 0 1em;
+    padding: 5px;
+    font-size: 110%;
+}
+
+#login_form_holder {
+
+}
+
+input[type="submit"] {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(-90deg, #FFFFFF, #E1E1E1) repeat scroll 0 0 transparent;
+    border-color: -moz-use-text-color -moz-use-text-color #EBEBEB;
+    border-radius: 4px 4px 4px 4px;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica,arial,freesans,clean,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 34px;
+    margin-left: 1px;
+    overflow: visible;
+    padding: 0 13px;
+    position: relative;
+    text-shadow: 1px 1px 0 #FFFFFF;
+    top: 1px;
+    white-space: nowrap;
+}
+
+ #wrapper {
+  text-align: center;
+}
+
+strong {
+    color: #DDDDDD;
+}
 
  img {
    border: 0px;
@@ -32,14 +84,15 @@ body{
  }
 
 #rh-col{
- margin: 20px 20px 20px 220px;
+ margin: 15px 0px 15px 0px;
  border: 2px solid #000000;
- background: #ffffff;
+ background: #1B1B1B;
  color: #333333;
  padding: 20px;
  display: inline-block;
  width: 1000px;
  height: 875px;
+ text-align: center;
  }
 
 /* Presentation Stylesheet */
@@ -107,7 +160,7 @@ h4 {
 }
 
 #header {
-  background-color: #99ccff;
+  background-color: #0A0A0A;
   height: 100px;
   vertical-align: middle;
 
@@ -115,7 +168,7 @@ h4 {
 
 #topnav {
   margin-top:5px;
-  background-color: #3333ff;
+  background-color: #0A0A0A;
   height: 50px;
   vertical-align: middle;
 }

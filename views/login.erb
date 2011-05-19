@@ -8,17 +8,13 @@
   <% end %>
   
   <form action="/login" method="post">
-    <table>
-      <tr>
-        <td>username</td>
-        <td><input name="username" /></td>
-      </tr>
-      <tr>
-        <td>password</td>
-        <td><input type="password" name="password" /></td>
-      </tr>
-    </table>
-    <input type="submit" value="Log in" />
+    <div id='login_form_holder'>
+       <label for='username' >Username:</label><br />
+       <input id='username' name="username" /><br />
+       <label for='password'>Password:</label><br />
+       <input id='password' type="password" name="password" /><br />
+       <input type="submit" value="Log in" />
+    </div>
   </form>
 </div>
 
