@@ -142,17 +142,17 @@ Nimda.prototype.getKeyValue = function(key, divId){
         if(keyType == 'string'){
           innerHtml +=  result;
         } else if(keyType == 'hash'){
-          innerHtml += "<ul>";
+          innerHtml += "<ol>";
           $.each(result, function(key, value){
             innerHtml += "<li>" + key + " => "+ value + "</li>";
           });
-          innerHtml += "</ul>"
+          innerHtml += "</ol>"
         } else {
-          innerHtml += "<ul>";
+          innerHtml += "<ol>";
           for(i = 0; i < result.length; i++){
             innerHtml += "<li>" + result[i] + "</li>";
           }
-          innerHtml += "</ul>"
+          innerHtml += "</ol>"
         }
         innerHtml += "</div>";
         /*

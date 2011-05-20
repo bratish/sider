@@ -1,3 +1,5 @@
+class InstallRedis
+  def install
 # Check if Git is present in the system
 op = %x[git --version]
 if %x[echo $?].chomp == '0'
@@ -7,7 +9,7 @@ elsif
   exit
 end
 
-REDIS_ROOT = "#{ENV['HOME']}/.redis"
+#REDIS_ROOT = "#{ENV['HOME']}/.redis"
 redis_github_repo = "git://github.com/antirez/redis.git"
 # check if the ~/.redis dir present creare it directory if not present
 Dir.mkdir REDIS_ROOT unless File.directory? REDIS_ROOT
@@ -39,3 +41,5 @@ else
 end
 
 # tweak redis.conf file
+end
+end
